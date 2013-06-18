@@ -1,0 +1,117 @@
+<script type="text/javascript">
+
+function submitForm( form ) {
+	
+	var am_payment = false;
+	for (var i=0; i < form.am_payment.length; i++) {
+	   if (form.am_payment[i].checked && form.am_payment[i].value) {
+		  am_payment = true;
+	   }
+	}
+
+	if ( !am_payment && !form.CP_otheramount.value ) {
+		alert ("Please enter a donation amount.");
+		return false;		
+	}
+	return true;
+	
+}
+
+</script>	
+
+<div id="donation-forms-wrapper">
+  <div id="donation-one-wrapper">
+    <div class="donation-one-top">
+      <form method="POST" action="https://pnpnet.qvalent.com/OnlinePaymentServlet">
+        <h2>Make a one-off donation</h2>
+        <div class="donation-block">
+          <img src="http://www.missionaustralia.com.au/templates/matemplate/images/donate-one-young.jpg"> Can help a young person reconnect with their family and support services
+          <div class="donate-amount">$ 30
+            <input type="radio" value="30.00" name="am_payment">
+          </div>
+        </div>
+        <div class="donation-block">
+          <img src="http://www.missionaustralia.com.au/templates/matemplate/images/donate-one-sleeping.jpg"> Can help people who are sleeping rough to get their lives back on track
+          <div class="donate-amount">$ 50
+            <input type="radio" value="50.00" name="am_payment">
+          </div>
+        </div>
+        <div class="donation-block">
+          <img src="http://www.missionaustralia.com.au/templates/matemplate/images/donate-one-family.jpg"> Can help a family in crisis find accommodation and stay together
+          <div class="donate-amount">$ 100
+            <input type="radio" value="100.00" name="am_payment">
+          </div>
+        </div>
+        <div class="donation-block bottom">
+          <input width="115" type="image" align="left" height="28" onclick="_gaq.push (['_trackEvent', 'payment', 'donation-one-off']);return submitForm(this.form);" style="margin-top:5px;" name="image" src="http://www.missionaustralia.com.au/templates/matemplate/images/donate-btn.png">
+          <div class="donate-amount">other $
+            <input type="text" value="" name="CP_otheramount" class="tbox"> <input type="radio" value="" name="am_payment">
+          </div>
+        </div>
+        
+        
+        <input type="hidden" value="MISSION" name="cd_community">
+        <input type="hidden" value="MISSION" name="cd_supplier_business">
+        <input type="hidden" value="AUD" name="cd_currency">
+        
+        <input type="hidden" value="190" name="transaction_type">
+		<input type="hidden" value="http://www.missionaustralia.com.au/error" id="errorURL" name="errorURL">
+
+        <input type="hidden" value="http://www.missionaustralia.com.au/thank-you" id="returnURL" name="returnURL">
+        <input type="hidden" value="NGDXX6NET" id="CP_activityCode" name="CP_activityCode">
+      </form>
+    </div>
+    <div class="donation-one-bottom">
+      <!-- -->
+    </div>
+  </div>
+  <div id="donation-monthly-wrapper">
+    <div class="donation-monthly-top">
+      <form method="POST" action="https://pnpnet.qvalent.com/OnlinePaymentServlet">
+        <h2>Become a monthly supporter</h2>
+        <div class="donation-block">
+          <img src="http://www.missionaustralia.com.au/templates/matemplate/images/donate-monthly-counseling.jpg"> Can go towards the long-term counselling and support of young Australians who are struggling
+          <div class="donate-amount">$ 25
+            <input type="radio" value="25.00" name="am_payment">
+          </div>
+        </div>
+        <div class="donation-block">
+          <img src="http://www.missionaustralia.com.au/templates/matemplate/images/donate-monthly-homeless.jpg"> Can go towards our services that support people who are homeless  
+          <div class="donate-amount">$ 35
+            <input type="radio" value="35.00" name="am_payment">
+          </div>
+        </div>
+        <div class="donation-block">
+          <img src="http://www.missionaustralia.com.au/templates/matemplate/images/donate-monthly-family.jpg"> Can go towards providing long-term support to Australian families, helping them to raise happy, healthy children
+          <div class="donate-amount">$ 45
+            <input type="radio" value="45.00" name="am_payment">
+          </div>
+        </div>
+        <div class="donation-block bottom">
+          <input width="115" type="image" align="left" height="28" onclick="_gaq.push(['_trackEvent', 'payment', 'donation-regular']);return submitForm(this.form);" style="margin-top:5px;" name="image" src="http://www.missionaustralia.com.au/templates/matemplate/images/donate-btn.png">
+          <div class="donate-amount">other $
+            <input type="text" value="" name="CP_otheramount" class="tbox"> <input type="radio" value="" name="am_payment">
+          </div>
+        </div>
+        
+        <input type="hidden" value="MISSION" name="cd_community">
+        <input type="hidden" value="MISSION" name="cd_supplier_business">
+        <input type="hidden" value="AUD" name="cd_currency">
+
+        <input type="hidden" value="193" name="transaction_type">
+ 
+		<input type="hidden" value="http://www.missionaustralia.com.au/error" id="errorURL" name="errorURL">
+
+        <input type="hidden" value="http://www.missionaustralia.com.au/thank-you" id="returnURL" name="returnURL">
+        <input type="hidden" value="NRGXXXXWG" id="CP_activityCode" name="CP_activityCode">
+      </form>
+    </div>
+    <div class="donation-monthly-bottom">
+      <!-- -->
+    </div>
+  </div>
+</div>
+
+			
+			
+		
